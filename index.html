@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>D3_Lib</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="align">
+        <b>
+            <h1>Hello everyone!</h1>
+        </b>
+    </div>
+    <b>
+        <div class="preformatted">
+I'll tell you a little about my addition to GoreBox modding.
+For now there are only a couple of commands, in the future I'm going to add to them and update them.<h1>Base</h1><nobr>
+</nobr>Access to commands from the library is done using the print command.
+For example, if I want to get the time set on the PC, I should write:
+<pre><code>
+print("D3_RealDate")
+</code></pre>
+The response from this command will come to the OnChatMessage function.
+Different commands will have different senders, but the message variable will always contain the data you wanted to receive.
+<h1>Data work</h1>To work with data dll have 2 commands<ul><li>D3_SaveData</li><li>D3_GetData</li>
+</ul>These two commands do exactly the same as described earlier. They call OnChatMessage with parameters<ul><li>sender= "D3_GetData"</li><li>message = YourData.</li></ul>
+Reading occurs in the format:
+<pre><code>Key{YourData}</code></pre>
+If you want to save data, use command <pre><code>print("D3_SaveData Player{Data})</code></pre>You don't have to use { to save something, but it's better to always use them, it will be much more convenient to access your data in the future.
+The role of the separator is played by '{' I think in the future it will be possible to change it in the config. Be careful!
+Before you start working, you should set your path to GoreBox\D3_LibData\config.cfg. In the future, the config will have more parameters.
+<h1>Real Date</h1>The easiest command to use. There is nothing complicated here, it just reads the time from your PC and then sends everything to the OnChatMessage function.
+The sender variable is D3_RealDate. The message variable is the time from your PC.
+
+        </div>
+    </b>
+</body>
+</html>
